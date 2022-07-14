@@ -1,6 +1,5 @@
 # Import libraries
-import torch
-import torch.nn.functional as F
+import torch, torch.nn.functional as F
 from torch.nn import Module
         
 class ContrastiveLoss(Module):

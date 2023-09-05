@@ -1,7 +1,7 @@
 # Import libraries
 import torch
-from torch.nn import Module
 import torch.nn.functional as F
+from torch.nn import Module
         
 class ContrastiveLoss(Module):
 
@@ -13,7 +13,7 @@ class ContrastiveLoss(Module):
     
     Parameter:
     
-        margin.   - margin for the loss, float.
+        margin    - margin for the loss, float.
         
     Output:
     
@@ -44,7 +44,7 @@ class ContrastiveLoss(Module):
                 fm1       - feature map#1, tensor;
                 fm2       - feature map#2, tensor;
                 label     - label for the loss, float;
-                mean.     - whether or not to compute mean value of the loss values, bool.
+                mean      - whether or not to compute mean value of the loss values, bool.
                 
         Output:
     
@@ -59,4 +59,3 @@ class ContrastiveLoss(Module):
         losses = 0.5 * (label * dis + (1 + -1 * label) * F.relu(self.margin - (dis + self.eps).sqrt()).pow(2))
         
         return losses.mean() if mean else losses.sum()
-    

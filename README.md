@@ -9,3 +9,5 @@ Then activate the environment using the following command:
 ```python
 conda activate speed
 ```
+
+* Download dataset from the [link](https://github.com/DGU-AI-LAB/Korean-Tourist-Spot-Dataset)

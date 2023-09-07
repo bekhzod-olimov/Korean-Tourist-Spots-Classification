@@ -10,4 +10,4 @@ Then activate the environment using the following command:
 conda activate speed
 ```
 
-* Download dataset from the [link](https://github.com/DGU-AI-LAB/Korean-Tourist-Spot-Dataset)
+* Download dataset from the [link](https://github.com/DGU-AI-LAB/Korean-Tourist-Spot-Dataset).

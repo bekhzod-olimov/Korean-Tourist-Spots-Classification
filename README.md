@@ -1,2 +1,2 @@
 # Korean-Tourist-Spots-Classification
-This repository contains training and inference processess of deep learning-based image classification model using [Korean Tourist Spot Dataset](https://github.com/DGU-AI-LAB/Korean-Tourist-Spot-Dataset).
+This repository contains training, inference processess of deep learning-based image classification model and analysis of the trained model using [GradCAM](https://github.com/jacobgil/pytorch-grad-cam) on the [Korean Tourist Spot Dataset](https://github.com/DGU-AI-LAB/Korean-Tourist-Spot-Dataset).

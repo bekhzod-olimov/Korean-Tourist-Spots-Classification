@@ -17,5 +17,7 @@ conda activate speed
 ![image](https://github.com/bekhzod-olimov/Korean-Tourist-Spots-Classification/assets/50166164/022d11fa-d189-4cdf-ad7d-2eab6e87e118)
 
 ```python
-python main.py --ds_name="cifar10"
+
+python main.py --dataset_name "korean_landmarks" --batch_size 32 --epochs 30
+
 ```

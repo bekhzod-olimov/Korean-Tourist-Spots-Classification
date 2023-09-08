@@ -21,3 +21,7 @@ conda activate speed
 python main.py --dataset_name "korean_landmarks" --batch_size 32 --epochs 30
 
 ```
+* Inference process with trained model using the following arguments:
+
+![image](https://github.com/bekhzod-olimov/Korean-Tourist-Spots-Classification/assets/50166164/89ddb8b8-58e8-48d1-a908-91bf11c48554)
+

@@ -11,3 +11,11 @@ conda activate speed
 ```
 
 * Download dataset from the [link](https://github.com/DGU-AI-LAB/Korean-Tourist-Spot-Dataset).
+
+* Train the model using the following arguments:
+
+![image](https://github.com/bekhzod-olimov/Korean-Tourist-Spots-Classification/assets/50166164/022d11fa-d189-4cdf-ad7d-2eab6e87e118)
+
+```python
+python main.py --ds_name="cifar10"
+```

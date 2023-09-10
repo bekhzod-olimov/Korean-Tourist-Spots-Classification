@@ -32,5 +32,10 @@ python inference.py --dataset_name "korean_landmarks" --save_path "saved_models"
 ```
 
 * Inference Results:
-      - Predictions:
+  
+        - Predictions:
   ![korean_landmarks_preds](https://github.com/bekhzod-olimov/Korean-Tourist-Spots-Classification/assets/50166164/7cd585e2-6f65-4afe-ba01-87a41e9a51d4)
+
+        - GradCam:
+  ![korean_landmarks_gradcam](https://github.com/bekhzod-olimov/Korean-Tourist-Spots-Classification/assets/50166164/84ef0632-eefb-409a-af33-2f50853339e4)
+

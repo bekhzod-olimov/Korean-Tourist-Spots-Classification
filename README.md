@@ -30,3 +30,7 @@ python main.py --dataset_name "korean_landmarks" --batch_size 32 --epochs 30
 python inference.py --dataset_name "korean_landmarks" --save_path "saved_models" --dls_dir "saved_dls"
 
 ```
+
+* Inference Results:
+      - Predictions:
+  ![korean_landmarks_preds](https://github.com/bekhzod-olimov/Korean-Tourist-Spots-Classification/assets/50166164/7cd585e2-6f65-4afe-ba01-87a41e9a51d4)

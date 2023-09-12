@@ -26,7 +26,7 @@ def get_dl(ds_name, tr_tfs, val_tfs, bs):
         trainloader    - train dataloader, torch dataloader object;
         testloader     - test dataloader, torch dataloader object;
         num_classes    - number of classes in the dataset, int.
-    
+        
     """
     
     # Assertions for the dataset name
@@ -98,24 +98,28 @@ class SketchDataset(Dataset):
         data            - name of the data, str;
         transformations - image transformations to be applied, torchvision object;
         im_files        - valid image extentions, list -> str.
-
-    
-    
+        
     """
     
     def __init__(self, data, transformations = None, im_files = [".jpg", ".png", ".jpeg"]):
         super().__init__()
         
+        # Set the root and version of the data
         root, version = "/app/input/dataset/sketch", "tx_000000000000" if "sketch" in data else None
+        # Get image paths
         self.ims_paths = sorted(glob(f"{root}/photo/{version}/*/*[{im_file for im_file in im_files}]"))
+        # Get sketch paths
         self.sks_paths = sorted(glob(f"{root}/sketch/{version}/*/*[{im_file for im_file in im_files}]"))
+        # Get the transformations to be applied
         self.transformations = transformations
-        
+
+        # Get the classes of the dataset
         self.classes, cls_count = {}, 0
         for idx, im in enumerate(self.ims_paths):
             cls_name = self.get_dir_name(im).split("/")[-1]
             if cls_name not in self.classes: self.classes[cls_name] = cls_count; cls_count += 1
         
+    # Function to return the length of the dataset
     def __len__(self): return len(self.ims_paths)
 
     def get_dir_name(self, path): return os.path.dirname(path)

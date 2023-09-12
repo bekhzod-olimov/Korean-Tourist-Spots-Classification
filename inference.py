@@ -18,15 +18,18 @@ def run(args):
     
     """
     
+    # Ensure that the dataset name in the list
     assert args.dataset_name in ["cars", "ghim", "mnist", "cifar10", "korean_landmarks"], "Please choose the proper dataset name"
     
     # Get train arguments 
     argstr = yaml.dump(args.__dict__, default_flow_style = False)
     print(f"\nTraining Arguments:\n\n{argstr}")
-    
-    os.makedirs(args.save_path, exist_ok=True)
-    
+
+    # Create directory to save the inference results
+    os.makedirs(args.save_path, exist_ok = True)
+    # Get the test dataloader for the infernece
     test_dl = torch.load(f"{args.dls_dir}/{args.dataset_name}_test_dl")
+    # Get the class names in the dataset
     with open(f"{args.dls_dir}/{args.dataset_name}_cls_names.pkl", "rb") as f: cls_names = pickle.load(f)
     print(f"Dataloader and class names are successfully loaded!")
     print(f"There are {len(test_dl)} batches and {len(cls_names)} classes in the test dataloader!")

@@ -1,13 +1,12 @@
 # Import libraries
 import torch, torchvision, os, numpy as np
 from torch.utils.data import random_split, Dataset, DataLoader
-from torch import nn
-from glob import glob
+from torch import nn; from glob import glob
 from PIL import Image, ImageFile
 from torchvision import transforms as T
-from torchvision.datasets import ImageFolder
-
+# To load large image files
 ImageFile.LOAD_TRUNCATED_IMAGES = True
+# Set the manual seed for reproductivity
 torch.manual_seed(2023)
 
 def get_dl(ds_name, tr_tfs, val_tfs, bs):
@@ -89,6 +88,20 @@ def get_dl(ds_name, tr_tfs, val_tfs, bs):
     return trainloader, val_dl, test_dl, cls_names, num_classes
 
 class SketchDataset(Dataset):
+
+    """
+
+    This class gets several parameters and returns sketch dataset.
+
+    Parameters:
+
+        data            - name of the data, str;
+        transformations - image transformations to be applied, torchvision object;
+        im_files        - valid image extentions, list -> str.
+
+    
+    
+    """
     
     def __init__(self, data, transformations = None, im_files = [".jpg", ".png", ".jpeg"]):
         super().__init__()

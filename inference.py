@@ -34,11 +34,13 @@ def run(args):
     print(f"Dataloader and class names are successfully loaded!")
     print(f"There are {len(test_dl)} batches and {len(cls_names)} classes in the test dataloader!")
 
-    # Get the model to be trained
+    # Get the model for the inference
     model = timm.create_model(args.model_name, num_classes = len(cls_names)); model.to(args.device)
-    # Load the trained model parameters
+    
     print("\nLoading the state dictionary...")
+    # Get the trained model parameters
     state_dict = get_state_dict(f"{args.save_model_path}/{args.model_name}_{args.dataset_name}_best.ckpt")
+    # Load the trained model parameters
     model.load_state_dict(state_dict, strict = True)
     print(f"The {args.model_name} state dictionary is successfully loaded!\n")
     # Get input images, labels, and the predicted labels
@@ -57,8 +59,6 @@ if __name__ == "__main__":
     parser.add_argument("-is", "--inp_im_size", type = tuple, default = (224, 224), help = "Input image size")
     parser.add_argument("-dn", "--dataset_name", type = str, default = "korean_landmarks", help = "Dataset name for training")
     parser.add_argument("-mn", "--model_name", type = str, default = "rexnet_150", help = "Model name to be trained (from timm library)")
-    # parser.add_argument("-mn", "--model_name", type = str, default = 'vit_base_patch16_224', help = "Model name for backbone")
-    # parser.add_argument("-mn", "--model_name", type = str, default = 'vgg16_bn', help = "Model name for backbone")
     parser.add_argument("-d", "--device", type = str, default = "cuda:3", help = "GPU device name")
     parser.add_argument("-sm", "--save_model_path", type = str, default = "saved_models", help = "Path to the directory to save a trained model")
     parser.add_argument("-sp", "--save_path", type = str, default = "results", help = "Path to dir to save inference results")

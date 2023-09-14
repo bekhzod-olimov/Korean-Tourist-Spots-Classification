@@ -1,10 +1,8 @@
 # Import libraries
 import os, torch, cv2, random, numpy as np
-from collections import OrderedDict as OD
-from glob import glob
+from collections import OrderedDict as OD; from glob import glob
 from time import time; from tqdm import tqdm; from matplotlib import pyplot as plt
 from pytorch_grad_cam import GradCAM; from pytorch_grad_cam.utils.image import show_cam_on_image
-
 
 def get_fm(fm):
         

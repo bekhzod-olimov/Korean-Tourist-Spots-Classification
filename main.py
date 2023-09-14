@@ -26,7 +26,7 @@ def run(args):
     argstr = yaml.dump(args.__dict__, default_flow_style = False)
     print(f"\nTraining Arguments:\n\n{argstr}")
 
-    # wandb login
+    # Wandb login
     os.system("wandb login --relogin 3204eaa1400fed115e40f43c7c6a5d62a0867ed1")
     # Create directories
     os.makedirs(args.dls_dir, exist_ok = True); os.makedirs(args.stats_dir, exist_ok = True)
@@ -96,16 +96,9 @@ if __name__ == "__main__":
     parser.add_argument("-lr", "--learning_rate", type = float, default = 1e-3, help = "Learning rate value")
     parser.add_argument("-mr", "--margin", type = float, default = 0.3, help = "Loss margin value")
     parser.add_argument("-e", "--epochs", type = int, default = 100, help = "Train epochs number")
-    # parser.add_argument("-sm", "--save_model_path", type = str, default = "/app/outputs/saved_models", help = "Path to the directory to save a trained model")
-    # parser.add_argument("-sd", "--stats_dir", type = str, default = "/app/outputs/stats", help = "Path to dir to save train statistics")
-    # parser.add_argument("-dl", "--dls_dir", type = str, default = "/app/outputs/saved_dls", help = "Path to dir to save dataloaders")
     parser.add_argument("-sm", "--save_model_path", type = str, default = "saved_models", help = "Path to the directory to save a trained model")
     parser.add_argument("-sd", "--stats_dir", type = str, default = "stats", help = "Path to dir to save train statistics")
-    parser.add_argument("-dl", "--dls_dir", type = str, default = "saved_dls", help = "Path to dir to save dataloaders")
-    
-    # parser.add_argument("-sm", "--save_model_path", type = str, default = "saved_models", help = "Path to the directory to save a trained model")
-    # parser.add_argument("-sd", "--stats_dir", type = str, default = "stats", help = "Path to dir to save train statistics")
-    # parser.add_argument("-dl", "--dls_dir", type = str, default = "saved_dls", help = "Path to dir to save dataloaders")
+    parser.add_argument("-dl", "--dls_dir", type = str, default = "saved_dls", help = "Path to dir to save dataloaders")    
     
     # Parse the added arguments
     args = parser.parse_args() 

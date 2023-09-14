@@ -48,7 +48,7 @@ def get_state_dict(checkpoint_path):
     
     # Go through the checkpoint dictionary items
     for k, v in checkpoint["state_dict"].items():
-        # Remove "model."
+        # Remove "model." from the key
         name = k.replace("model.", "") 
         new_state_dict[name] = v
     
@@ -153,9 +153,7 @@ def visualize(all_ims, all_preds, all_gts, num_ims, rows, cls_names, save_path, 
     save_num = 0 if len(files) == 0 else int(files[-1].split(".")[0].split("_")[-1])
     plt.savefig(f"{save_path}/{save_folder}/{save_name}_preds_{save_num + 1}.png")
     print(f"The visualization can be seen in {save_path}/{save_folder} directory.")
-    
-    
-    
+        
 def grad_cam(model, all_ims, num_ims, rows, save_path, save_folder, save_name):
 
     """
@@ -203,7 +201,10 @@ def grad_cam(model, all_ims, num_ims, rows, save_path, save_folder, save_name):
         
     # Save the visualization result
     os.makedirs(f"{save_path}/{save_folder}", exist_ok = True)
+    # Get all files in the folder
     files = sorted(glob(f"{save_path}/{save_folder}/*"))
+    # Set the saving number
     save_num = 0 if len(files) == 0 else int(files[-1].split(".")[0].split("_")[-1])
+    # Save the image
     plt.savefig(f"{save_path}/{save_folder}/{save_name}_gradcam_{save_num + 1}.png")
     print(f"The GradCAM visualization can be seen in {save_path}/{save_folder} directory.")

@@ -1,9 +1,9 @@
 # Import libraries
 import torch, torchvision, os, numpy as np
 from torch.utils.data import random_split, Dataset, DataLoader
-from torch import nn; from glob import glob
-from PIL import Image, ImageFile
+from torch import nn; from glob import glob; from PIL import Image, ImageFile
 from torchvision import transforms as T
+
 # To load large image files
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 # Set the manual seed for reproductivity
@@ -92,7 +92,9 @@ class CustomDataset(Dataset):
     def __init__(self, root = "/mnt/data/dataset/bekhzod/im_class/korean_landmarks/kts/", tr_val = "train", transformations = None):
         super().__init__()
         
+        # Get image paths
         self.im_paths = sorted(glob(f"{root}{tr_val}/*/*/images/*.jpg"))
+        # Get the transformations to be applied
         self.transformations = transformations
         
         self.classes = {}

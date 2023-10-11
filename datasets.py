@@ -123,11 +123,27 @@ class CustomDataset(Dataset):
     # Function to count the images in the dataset
     def __len__(self): return len(self.im_paths)
 
+    # Function to get label of the data
     def get_label(self, path): return path.split("/")[-3]
 
+    # Function to get information about the classes
     def get_info(self): return {v: k for k, v in self.classes.items()}, len(self.classes)
 
     def __getitem__(self, idx):
+
+        """
+
+        This function gets an index and returns data in the particular index.
+
+        Parameter:
+
+            idx      - index, int.
+
+        Outputs:
+
+            im, gt
+        
+        """
         
         im_path = self.im_paths[idx]
         im = Image.open(im_path)

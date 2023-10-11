@@ -141,13 +141,18 @@ class CustomDataset(Dataset):
 
         Outputs:
 
-            im, gt
-        
+            im       - image, tensor;
+            gt       - ground truth, int.
+            
         """
         
+        # Get the specific image path
         im_path = self.im_paths[idx]
+        # Open the image in the path
         im = Image.open(im_path)
+        # Get the ground truth
         gt = self.classes[self.get_label(im_path)]
+        # Apply transformations
         if self.transformations: im = self.transformations(im)
         
         return im, gt    

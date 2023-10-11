@@ -88,6 +88,18 @@ def get_dl(ds_name, tr_tfs, val_tfs, bs):
     return trainloader, val_dl, test_dl, cls_names, num_classes
 
 class CustomDataset(Dataset):
+
+    """
+
+    This class gets several parameters and returns dataset object.
+
+    Parameters:
+
+        root            - path to data, str;
+        tr_val          - train or test data, str;
+        transformations - transformations to be applied, torch transforms object.    
+    
+    """
     
     def __init__(self, root = "/mnt/data/dataset/bekhzod/im_class/korean_landmarks/kts/", tr_val = "train", transformations = None):
         super().__init__()

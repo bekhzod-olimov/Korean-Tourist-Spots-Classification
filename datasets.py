@@ -97,12 +97,18 @@ class CustomDataset(Dataset):
         # Get the transformations to be applied
         self.transformations = transformations
         
+        # Create a dictionary for the classes
         self.classes = {}
+        # Set the class counter
         cls_count = 0
+        # Go through every image path
         for idx, im_path in enumerate(self.im_paths):
+            # Get the gt
             gt = self.get_label(im_path)
+            # Add the class to the dictionary
             if gt not in self.classes: self.classes[gt] = cls_count; cls_count += 1
         
+    # Function to count the images in the dataset
     def __len__(self): return len(self.im_paths)
 
     def get_label(self, path): return path.split("/")[-3]

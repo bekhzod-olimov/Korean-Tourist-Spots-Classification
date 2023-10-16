@@ -18,4 +18,5 @@ def get_tfs(ds_name, im_dims = (224, 224)):
   
   """
   
+  # Return transformations
   return [T.Compose([T.Resize(im_dims), T.RandomHorizontalFlip(), T.ToTensor()]), T.Compose([T.Resize(im_dims), T.ToTensor()])]

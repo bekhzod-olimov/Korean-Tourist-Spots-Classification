@@ -33,12 +33,12 @@ python inference.py --dataset_name "korean_landmarks" --save_path "saved_models"
 
 * Inference Results:
   
-        - Predictions:
+        Predictions:
   ![korean_landmarks_preds](https://github.com/bekhzod-olimov/Korean-Tourist-Spots-Classification/assets/50166164/7cd585e2-6f65-4afe-ba01-87a41e9a51d4)
   ![korean_landmarks_preds_2](https://github.com/bekhzod-olimov/Korean-Tourist-Spots-Classification/assets/50166164/a5aefc7a-6a4c-49aa-b779-37a9ca525a82)
   ![korean_landmarks_preds_3](https://github.com/bekhzod-olimov/Korean-Tourist-Spots-Classification/assets/50166164/1f533082-be87-486a-91a2-0cb05c963488)
 
-        - GradCam:
+        GradCam:
   ![korean_landmarks_gradcam](https://github.com/bekhzod-olimov/Korean-Tourist-Spots-Classification/assets/50166164/84ef0632-eefb-409a-af33-2f50853339e4)
   ![korean_landmarks_gradcam_2](https://github.com/bekhzod-olimov/Korean-Tourist-Spots-Classification/assets/50166164/61eec758-38fb-458e-b9b6-06fb2078f75f)
   ![korean_landmarks_gradcam_3](https://github.com/bekhzod-olimov/Korean-Tourist-Spots-Classification/assets/50166164/3a8ce17d-048f-45fb-a170-ab295d6a7d47)

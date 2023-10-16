@@ -357,7 +357,6 @@ class TripletImagePredictionLogger(Callback):
                                                      val_labels[:self.num_samples])]
                 })
             
-
 class Model(pl.LightningModule):
     
     """"

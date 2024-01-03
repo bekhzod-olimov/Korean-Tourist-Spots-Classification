@@ -22,6 +22,18 @@ b) Create a virtual environment using txt file:
 conda create -n speed python=3.9
 ```
 
+- Activate the environment using the following command:
+
+```python
+conda activate speed
+```
+
+- Install libraries from the text file:
+
+```python
+pip install -r requirements.txt
+```
+
 * Download dataset from the [link](https://github.com/DGU-AI-LAB/Korean-Tourist-Spot-Dataset).
 
 * Train the model using the following arguments:

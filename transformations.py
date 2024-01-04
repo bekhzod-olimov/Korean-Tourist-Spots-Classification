@@ -14,7 +14,7 @@ def get_tfs(ds_name, im_dims = (224, 224)):
 
     Output:
 
-       out          - transformations to be applied, list.
+       tfs          - transformations to be applied, list -> transforms object.
 
     """
 
